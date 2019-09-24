@@ -140,10 +140,14 @@ void PulseTest::printCellVoltages(float *cellVoltages) {
       }
     }
     printf("\r\n");
-
+  
   }
   printf("Max voltage: %f \t ID: %d\r\n", max, maxID);
   printf("Min voltage: %f \t ID: %d\r\n", min, minID);
+  
+  if (max - min >= 0.1) {
+    printf("===BROKEN WELD===");
+  }
 }
 
 void PulseTest::printDCR() {
